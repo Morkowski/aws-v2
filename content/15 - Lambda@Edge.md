@@ -57,7 +57,7 @@ You may get a somewhat cryptic error about permissions. Despite the unhelpfulnes
 Implement as a **Viewer Request**.
 
 ```js
-exports.handler = async (event, context) => {
+export default handler = async (event, context) => {
   const request = event.Records[0].cf.request;
 
   console.log('Before', request.uri);
@@ -79,7 +79,7 @@ Implment as a **Viewer Response**.
 ```js
 'use strict';
 
-exports.handler = async (event, context) => {
+export default handler = async (event, context) => {
   const response = event.Records[0].cf.response;
   const headers = response.headers;
 
@@ -123,7 +123,7 @@ exports.handler = async (event, context) => {
 Implement as a **Origin Request**.
 
 ```js
-exports.handler = async (event, context) => {
+export default handler = async (event, context) => {
   const request = event.Records[0].cf.request;
 
   const response = {
